@@ -1,6 +1,7 @@
 import pygame
 import random
 from pygame import *
+import os
 
 pygame.mixer.pre_init(44100, -16, 2, 2048)  # fix audio delay
 pygame.init()
@@ -30,7 +31,7 @@ def load_image(
         sizey=-1,
         colorkey=None,
 ):
-    fullname = os.path.join('sprites', name)
+    fullname = os.path.join('../sprites', name)
     image = pygame.image.load(fullname)
     image = image.convert()
     if colorkey is not None:
@@ -52,7 +53,7 @@ def load_sprite_sheet(
         scaley=-1,
         colorkey=None,
 ):
-    fullname = os.path.join('sprites', sheetname)
+    fullname = os.path.join('../sprites', sheetname)
     sheet = pygame.image.load(fullname)
     sheet = sheet.convert()
 
@@ -113,7 +114,7 @@ def extractDigits(number):
         return digits
 
 
-class Dino():
+class Dino:
     def __init__(self, sizex=-1, sizey=-1):
         self.images, self.rect = load_sprite_sheet('dino.png', 5, 1, sizex, sizey, -1)
         self.images1, self.rect1 = load_sprite_sheet('dino_ducking.png', 2, 1, 59, sizey, -1)
