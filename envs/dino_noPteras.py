@@ -31,7 +31,7 @@ def load_image(
         sizey=-1,
         colorkey=None,
 ):
-    fullname = os.path.join('../sprites', name)
+    fullname = os.path.join('../gym_dino/envs/sprites', name)
     image = pygame.image.load(fullname)
     image = image.convert()
     if colorkey is not None:
@@ -53,7 +53,7 @@ def load_sprite_sheet(
         scaley=-1,
         colorkey=None,
 ):
-    fullname = os.path.join('../sprites', sheetname)
+    fullname = os.path.join('../gym_dino/envs/sprites', sheetname)
     sheet = pygame.image.load(fullname)
     sheet = sheet.convert()
 

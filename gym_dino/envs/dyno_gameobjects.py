@@ -1,6 +1,4 @@
-import pygame
-import os
-from dino_cfg import *
+from gym_dino.envs.dino_cfg import *
 import random
 from pygame import *
 
@@ -26,7 +24,7 @@ def load_image(
         sizey=-1,
         colorkey=None,
 ):
-    fullname = os.path.join('../sprites', name)
+    fullname = os.path.join('sprites', name)
     image = pygame.image.load(fullname)
     image = image.convert()
     if colorkey is not None:
