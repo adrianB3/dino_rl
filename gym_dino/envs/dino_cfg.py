@@ -11,6 +11,6 @@ game_speed = 4
 
 pygame.mixer.pre_init(44100, -16, 2, 2048)  # fix audio delay
 pygame.init()
-jump_sound = pygame.mixer.Sound('sprites/jump.wav')
-die_sound = pygame.mixer.Sound('sprites/die.wav')
-checkPoint_sound = pygame.mixer.Sound('sprites/checkPoint.wav')
+jump_sound = pygame.mixer.Sound('gym_dino/envs/sprites/jump.wav')
+die_sound = pygame.mixer.Sound('gym_dino/envs/sprites/die.wav')
+checkPoint_sound = pygame.mixer.Sound('gym_dino/envs/sprites/checkPoint.wav')

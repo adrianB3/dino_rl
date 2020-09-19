@@ -1,4 +1,5 @@
 import gym
+import pygame
 from gym import error, spaces, utils
 from gym.utils import seeding
 
@@ -10,17 +11,24 @@ class DinoEnv(gym.Env):
 
     def __init__(self):
         self.env = DinoGame()
-        self.observation_space = spaces.tuple
-        self.action_space = spaces.Discrete(3)
+        self.action_space = spaces.Discrete(2)
 
     def step(self, action):
-        pass
+        self.env.step(action)
+        observation, reward, done = self.env.get_current_state()
+
+        return observation, reward, done, ""
 
     def reset(self):
-        pass
+        self.env.draw()
+        self.env.reset()
+        obs, reward, done = self.env.get_current_state()
+
+        return obs
 
     def render(self, mode='human'):
-        pass
+        self.env.draw()
 
     def close(self):
-        pass
+        pygame.quit()
+        quit()
