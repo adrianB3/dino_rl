@@ -4,6 +4,7 @@ from gym import error, spaces, utils
 from gym.utils import seeding
 
 from gym_dino.envs.dino_game import DinoGame
+from gym_dino.envs.dino_cfg import width, height
 
 
 class DinoEnv(gym.Env):
@@ -11,6 +12,7 @@ class DinoEnv(gym.Env):
 
     def __init__(self):
         self.env = DinoGame()
+        self.observation_space = spaces.Box(0, 255, [height, width, 3])
         self.action_space = spaces.Discrete(2)
 
     def step(self, action):
